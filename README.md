@@ -74,79 +74,79 @@ To create a new Git repository, run:
 git init
 This initializes a new Git repository in the current directory.
 
-Adding Files (Staging)
+**Adding Files (Staging)**
 git add <file(s)>
 Staging prepares changes to be included in the next commit
 
-Committing Changes
+**Committing Changes**
 Commit changes with:
 git commit -m "Your commit message"
 Commits save your changes to the Git history.
-
-Pushing and Pulling
+****
+Pushing and Pulling****
 Push your changes to a remote repository:
 git push origin <branch>
 
-Pull changes from a remote repository:
+**Pull changes from a remote repository:**
 git pull origin <branch>
 
-Branching
+**Branching**
 Creating a Branch
 Create a new branch with:
 git branch <branch-name>
 
-Switching Between Branches
+**Switching Between Branches**
 Switch to a different branch:
 git checkout <branch-name>
 
-Merging Branches
+**Merging Branches**
 Merge changes from one branch into another:
 git merge <branch-name>
 
-Resolving Conflicts
+**Resolving Conflicts**
 Conflicts occur when Git can't automatically merge changes. Resolve conflicts by editing the affected files and then committing the changes.
 
 
-Stashing Changes
+**Stashing Changes**
 Stash Commands
 Stash your changes for later use:
 git stash
 
-List stashes:
+**List stashes:**
 git stash list
 Apply a stash:
 git stash apply <stash-name>
 
 
-Reset and Revert
+**Reset and Revert**
 Resetting Commits
 Undo commits with:
 git reset <commit>
 
-Reverting Commits
+**Reverting Commits**
 Revert commits with:
 git revert <commit>
 
 
-Tags
+**Tags**
 Creating Tags
 Create a lightweight tag:
 git tag <tag-name>
 
-Viewing Tags
+**Viewing Tags**
 View all tags:
 git tag
 
-GitHub Integration
-Cloning a Repository
-Clone a repository from GitHub:
+****GitHub Integration****
+
+**Clone a repository from GitHub:**
 git clone <repository-url>
 
-Pushing Changes to GitHub
+**Pushing Changes to GitHub**
 Push your local changes to GitHub:
 git push origin <branch>
 
-Pulling Changes from GitHub
+**Pulling Changes from GitHub**
 Pull changes from GitHub:
 git pull origin <branch>
 
