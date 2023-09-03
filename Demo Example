@@ -1,0 +1,195 @@
+Scenario:
+
+You're developing a personal website, and you want to use Git to manage your project. Here's a step-by-step demonstration with explanations for each Git command.
+
+Step 1: Initializing a Repository
+Initialize a Git repository for your project:
+git init
+
+
+Step 2: Creating Your First File
+Create an index.html file with some content:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage of my personal website.</p>
+</body>
+</html>
+📝 Explanation: You've created an index.html file to represent your website's homepage.
+
+Step 3: Staging Changes
+Stage the index.html file for the initial commit:
+git add index.html
+
+📂 Explanation: The git add command stages changes for the next commit. In this case, you're staging the index.html file.
+
+Step 4: Committing Changes
+Commit the staged changes with a meaningful message:
+git commit -m "Initial commit: Created homepage"
+
+📦 Explanation: The git commit command creates a snapshot of the staged changes along with a descriptive message. This message helps you and others understand the purpose of the commit.
+
+
+Step 5: Creating a New Branch
+Create a new branch named feature/contact-page for adding a contact page:
+git branch feature/contact-page
+
+🌿 Explanation: Branches allow you to work on different features or fixes independently. Here, you're creating a branch for the contact page feature.
+
+
+Step 6: Switching to the New Branch
+Switch to the feature/contact-page branch:
+git checkout feature/contact-page
+
+🛤️ Explanation: You've switched to the new branch to start working on the contact page.
+
+
+Step 7: Modifying the index.html File
+Edit the index.html file to add a link to the contact page:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage of my personal website.</p>
+    <a href="contact.html">Contact</a>
+</body>
+</html>
+
+✏️ Explanation: You've modified the index.html file to include a link to the future contact page.
+
+
+Step 8: Committing Changes to the Branch
+Commit your changes to the feature/contact-page branch:
+git add index.html
+git commit -m "Added contact page link"
+
+📦 Explanation: You've staged and committed the changes specific to the contact page feature branch.
+
+Step 9: Merging the Branch
+Switch back to the master branch and merge the feature/contact-page branch:
+git checkout master
+git merge feature/contact-page
+
+🌿 Explanation: You've switched back to the master branch and merged the changes from the feature/contact-page branch. This integrates your contact page feature into the main project.
+
+
+Step 10: Pushing to GitHub
+Create a new repository on GitHub and link it to your local repository. Then, push your changes to GitHub:
+git remote add origin <repository-url>
+git push -u origin master
+
+
+🌐 Explanation: You've linked your local repository to a remote GitHub repository and pushed your project's code to GitHub.
+
+Step 11: Using git reset
+Suppose you want to undo the last commit on the master branch because it contains a mistake.
+git reset HEAD~1
+
+🔄 Explanation: The git reset command allows you to reset the current branch to a specific commit. Here, we use HEAD~1 to reset to the previous commit (one commit back). This action doesn't delete your changes; it moves the branch pointer to a previous commit, effectively "uncommitting" the last change.
+
+❓ Cross Question: What's the difference between git reset and git revert?
+
+git reset rewinds the branch history by moving the branch pointer to a previous commit, effectively erasing commits after the reset point. It's useful for undoing local commits that haven't been pushed.
+
+Step 12: Correcting the Mistake and Committing Again
+Edit the index.html file to fix the mistake, and commit the change:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage of my personal website.</p>
+    <a href="contact.html">Contact</a>
+</body>
+</html>
+
+git add index.html
+git commit -m "Fixed mistake in the homepage"
+
+✏️ Explanation: You've edited the index.html file to correct the mistake and made a new commit with a descriptive message.
+
+Step 13: Using git revert
+Suppose you want to revert the last commit on the feature/contact-page branch, which added the contact page link.
+git checkout feature/contact-page
+git log
+git revert HEAD
+
+🚧 Explanation: In the feature/contact-page branch, you've used git revert HEAD to create a new commit that undoes the last commit. Unlike git reset, which erases commits, git revert creates a new commit that undoes the changes from the specified commit.
+
+❓ Cross Question: When should you use git reset and when should you use git revert?
+
+Use git reset when you want to remove commits from the branch history and haven't pushed those commits to a remote repository yet. Use git revert when you want to keep a clean branch history and have already shared the changes with others.
+
+Step 14: Stashing Changes
+Suppose you've made changes on the feature/contact-page branch but need to switch back to the master branch to fix a critical bug.
+git stash
+git checkout master
+
+🧹 Explanation: You've used git stash to temporarily save your changes without committing them. This allows you to switch to another branch without losing your work.
+
+Step 15: Applying the Stash
+Now, let's switch back to the feature/contact-page branch and apply the stash:
+git checkout feature/contact-page
+git stash apply
+
+🧹 Explanation: You've switched back to the feature/contact-page branch and used git stash apply to reapply the changes you stashed earlier.
+
+Step 16: Introducing a Conflict
+Imagine that while working on the feature/contact-page branch, another team member has also been making changes to the same index.html file on the master branch. Now, when you try to merge your changes into master, a conflict arises because Git doesn't know which changes to keep.
+
+On the master branch, edit the index.html file to add a different link to the about.html page:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage of my personal website.</p>
+    <a href="about.html">About</a>
+</body>
+</html>
+
+Commit the changes on the master branch:
+git add index.html
+git commit -m "Added About link on master"
+
+Now, switch back to the feature/contact-page branch:
+git checkout feature/contact-page
+
+Edit the index.html file again to make changes:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is the homepage of my personal website.</p>
+    <a href="contact.html">Contact</a>
+</body>
+</html>
+
+commit your changes
+git add index.html
+git commit -m "Updated Contact link on feature/contact-page"
+
+Now, when you try to merge the feature/contact-page branch into master, a conflict will occur because both branches have modified the same part of the index.html file
+git checkout master
+git merge feature/contact-page
+
+🚧 Explanation: A Git conflict arises when two branches modify the same part of a file, and Git cannot automatically decide which changes to keep. In this case, both the master and feature/contact-page branches edited the index.html file, causing a conflict when attempting to merge.
+
+❓ Cross Question: How do you resolve Git conflicts?
+
+To resolve a Git conflict, you'll need to manually edit the conflicted file to choose which changes to keep. Git marks the conflicting lines in the file, and you'll need to make the necessary adjustments. After resolving the conflict, you'll need to commit the changes to finalize the merge.
