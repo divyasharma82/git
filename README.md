@@ -71,34 +71,38 @@ The local repository stores all the project's history on your computer.
 ### Initializing a Repository
 
 To create a new Git repository, run:
->>git init
+git init
 This initializes a new Git repository in the current directory.
 
 Adding Files (Staging)
->>git add <file(s)>
+git add <file(s)>
 Staging prepares changes to be included in the next commit
 
 Committing Changes
 Commit changes with:
->>git commit -m "Your commit message"
+git commit -m "Your commit message"
 Commits save your changes to the Git history.
 
 Pushing and Pulling
 Push your changes to a remote repository:
->>git push origin <branch>
+git push origin <branch>
+
 Pull changes from a remote repository:
->>git pull origin <branch>
+git pull origin <branch>
 
 Branching
 Creating a Branch
 Create a new branch with:
->>git branch <branch-name>
+git branch <branch-name>
+
 Switching Between Branches
 Switch to a different branch:
->>git checkout <branch-name>
+git checkout <branch-name>
+
 Merging Branches
 Merge changes from one branch into another:
->>git merge <branch-name>
+git merge <branch-name>
+
 Resolving Conflicts
 Conflicts occur when Git can't automatically merge changes. Resolve conflicts by editing the affected files and then committing the changes.
 
@@ -106,40 +110,45 @@ Conflicts occur when Git can't automatically merge changes. Resolve conflicts by
 Stashing Changes
 Stash Commands
 Stash your changes for later use:
->>git stash
+git stash
+
 List stashes:
->>git stash list
+git stash list
 Apply a stash:
->>git stash apply <stash-name>
+git stash apply <stash-name>
 
 
 Reset and Revert
 Resetting Commits
 Undo commits with:
->>git reset <commit>
+git reset <commit>
+
 Reverting Commits
 Revert commits with:
->>git revert <commit>
+git revert <commit>
 
 
 Tags
 Creating Tags
 Create a lightweight tag:
->>git tag <tag-name>
+git tag <tag-name>
+
 Viewing Tags
 View all tags:
->>git tag
+git tag
 
 GitHub Integration
 Cloning a Repository
 Clone a repository from GitHub:
->>git clone <repository-url>
+git clone <repository-url>
+
 Pushing Changes to GitHub
 Push your local changes to GitHub:
->>git push origin <branch>
+git push origin <branch>
+
 Pulling Changes from GitHub
 Pull changes from GitHub:
->>git pull origin <branch>
+git pull origin <branch>
 
 
 
